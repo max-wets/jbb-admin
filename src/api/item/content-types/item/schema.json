@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Intro": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "item_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::item-category.item-category"
+    }
+  }
+}
