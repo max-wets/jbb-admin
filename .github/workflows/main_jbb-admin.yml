@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: "16.x"
 
       - name: npm install, build, and test
         run: |
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -46,11 +46,26 @@ jobs:
         with:
           name: node-app
 
-      - name: 'Deploy to Azure Web App'
+      - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'jbb-admin'
-          slot-name: 'Production'
+          app-name: "jbb-admin"
+          slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8CFA41321B564C958622E11DDBBF8C85 }}
           package: .
+          env:
+            HOST: ${{ secrets.HOST }}
+            PORT: ${{ secrets.PORT }}
+            JWT_SECRET: ${{ secrets.JWT_SECRET }}
+            ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+            CLOUDINARY_NAME: ${{ secrets.CLOUDINARY_NAME }}
+            CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
+            CLOUDINARY_SECRET: ${{ secrets.CLOUDINARY_SECRET }}
+            SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+            DATABASE_CLIENT: ${{ secrets.DATABASE_CLIENT }}
+            DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+            DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+            DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+            DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+            DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
