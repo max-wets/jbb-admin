@@ -1,6 +1,3 @@
-const path = require("path");
-const fs = require("fs");
-
 module.exports = ({ env }) => ({
   connection: {
     client: env("DATABASE_CLIENT"),
