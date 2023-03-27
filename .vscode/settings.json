@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "/subscriptions/afa6700e-06b6-44b1-bf6c-bd7ccb2dbd6b/resourceGroups/jbb-admin_group/providers/Microsoft.Web/sites/jbb-admin",
+  "appService.deploySubpath": "."
+}
