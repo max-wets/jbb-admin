@@ -11,11 +11,7 @@ module.exports = ({ env }) => ({
       user: env("DATABASE_USERNAME", "jbbeauty"),
       password: env("DATABASE_PASSWORD", "jbbeauty"),
     },
-    ssl: {
-      ca: fs
-        .readFileSync(`${__dirname}/certificates/DigiCertGlobalRootCA.crt.pem`)
-        .toString(),
-    },
+    ssl: env("DATABASE_SSL", true),
     debug: false,
   },
 });
