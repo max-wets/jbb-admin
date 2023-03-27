@@ -3,15 +3,14 @@ const fs = require("fs");
 
 module.exports = ({ env }) => ({
   connection: {
-    client: env("DATABASE_CLIENT", "postgres"),
+    client: env("DATABASE_CLIENT"),
     connection: {
-      host: env("DATABASE_HOST", "localhost"),
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME", "jbb"),
-      user: env("DATABASE_USERNAME", "jbbeauty"),
-      password: env("DATABASE_PASSWORD", "jbbeauty"),
+      host: env("DATABASE_HOST"),
+      port: env.int("DATABASE_PORT"),
+      database: env("DATABASE_NAME"),
+      user: env("DATABASE_USERNAME"),
+      password: env("DATABASE_PASSWORD"),
+      ssl: env("DATABASE_SSL", false),
     },
-    ssl: env("DATABASE_SSL", true),
-    debug: false,
   },
 });
