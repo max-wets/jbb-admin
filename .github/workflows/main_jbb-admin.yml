@@ -34,7 +34,7 @@ jobs: # The list of jobs to be executed in this workflow.
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy: # The second job, which runs on an ubuntu-latest runner, and depends on the build job
     runs-on: ubuntu-latest
