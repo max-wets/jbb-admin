@@ -4,5 +4,5 @@ module.exports = ({ env }) => ({
   app: {
     keys: env.array("APP_KEYS"),
   },
-  url: "https://jbb-admin.azurewebsites.net",
+  url: env("PUBLIC_URL", "http://localhost:1337"),
 });
