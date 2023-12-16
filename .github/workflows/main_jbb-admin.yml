@@ -29,7 +29,7 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           mkdir -p zip
-          zip -r zip/app.zip . -x@.zipignore
+          zip -r zip/release.zip . -x@.zipignore
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
