@@ -53,11 +53,6 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: Debug contents of deploy directory
-        run: |
-          echo $(pwd)
-          ls -al
-
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
