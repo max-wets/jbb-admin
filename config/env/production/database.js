@@ -12,7 +12,7 @@ module.exports = ({ env }) => ({
       ssl: env.bool("DATABASE_SSL", false) && {
         ca: fs
           .readFileSync(
-            `${__dirname}/../../../certificates/DigiCertGlobalRootCA.cer}`
+            `${__dirname}/../../../certificates/DigiCertGlobalRootCA.cer`
           )
           .toString(),
         rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", true),
