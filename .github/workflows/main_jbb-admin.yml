@@ -31,14 +31,11 @@ jobs:
           mkdir -p zip
           zip -r zip/app.zip . -x@.zipignore
 
-      - name: Debug contents of zip directory
-        run: ls -al
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: jbb-admin-app
-          path: zip/app.zip
+          path: zip/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,14 +50,13 @@ jobs:
         with:
           name: jbb-admin-app
 
-      - name: Debug contents of deploy directory
-        run: ls -al
-
       - name: Unzip artifact for deployment
+        run: unzip release.zip
+
+      - name: Debug contents of deploy directory
         run: |
           echo $(pwd)
-          ls -la
-          unzip zip/app.zip
+          ls -al
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
