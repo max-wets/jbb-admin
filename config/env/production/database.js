@@ -9,13 +9,20 @@ module.exports = ({ env }) => ({
       database: env("DATABASE_NAME"),
       user: env("DATABASE_USERNAME"),
       password: env("DATABASE_PASSWORD"),
-      ssl: {
+      ssl: env.bool("DATABASE_SSL", false) && {
         ca: fs
           .readFileSync(
             `${__dirname}/../../../certificates/DigiCertGlobalRootCA.cer}`
           )
           .toString(),
+        rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", true),
       },
+      schema: env("DATABASE_SCHEMA", "public"),
     },
+    pool: {
+      min: env.int("DATABASE_POOL_MIN", 2),
+      max: env.int("DATABASE_POOL_MAX", 10),
+    },
+    acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
   },
 });

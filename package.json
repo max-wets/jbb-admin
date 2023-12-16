@@ -8,9 +8,9 @@
     "name": "A Strapi developer"
   },
   "scripts": {
-    "build": "node node_modules/@strapi/strapi/bin/strapi.js build",
+    "build": "strapi build",
     "develop": "strapi develop",
-    "start": "node_modules/@strapi/strapi/bin/strapi.js start",
+    "start": "node node_modules/@strapi/strapi/bin/strapi.js start",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -29,8 +29,8 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=14.x.x <=18.x.x",
-    "npm": ">=8.0.0"
+    "node": ">=18.x.x <=20.x.x",
+    "npm": ">=6.0.0"
   },
   "strapi": {
     "uuid": "3ca7ac1d-0736-44d9-91bb-62b8a8b1ea3c"
