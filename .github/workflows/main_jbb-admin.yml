@@ -53,8 +53,14 @@ jobs:
         with:
           name: jbb-admin-app
 
+      - name: Debug contents of deploy directory
+        run: ls -al
+
       - name: Unzip artifact for deployment
-        run: unzip zip/app.zip
+        run: |
+          echo $(pwd)
+          ls -la
+          unzip zip/app.zip
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
