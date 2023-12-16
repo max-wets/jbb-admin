@@ -8,9 +8,9 @@
     "name": "A Strapi developer"
   },
   "scripts": {
-    "build": "strapi build",
+    "build": "node node_modules/@strapi/strapi/bin/strapi.js build",
     "develop": "strapi develop",
-    "start": "NODE_ENV=production node node_modules/@strapi/strapi/bin/strapi.js start",
+    "start": "node_modules/@strapi/strapi/bin/strapi.js start",
     "strapi": "strapi"
   },
   "dependencies": {
