@@ -31,6 +31,9 @@ jobs:
           mkdir -p zip
           zip -r zip/app.zip . -x@.zipignore
 
+      - name: Debug contents of zip directory
+        run: ls -al
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
