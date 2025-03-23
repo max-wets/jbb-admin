@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.4",
-    "@strapi/plugin-i18n": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
-    "@strapi/provider-email-sendgrid": "^4.15.5",
-    "@strapi/provider-upload-cloudinary": "^4.15.5",
-    "@strapi/strapi": "4.15.5",
+    "@strapi/plugin-i18n": "4.25.13",
+    "@strapi/plugin-users-permissions": "4.25.22",
+    "@strapi/provider-email-sendgrid": "^4.25.22",
+    "@strapi/provider-upload-cloudinary": "^4.25.22",
+    "@strapi/strapi": "4.25.22",
     "pg": "^8.11.3",
     "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
@@ -29,7 +29,7 @@
     "styled-components": "^5.2.1"
   },
   "engines": {
-    "node": ">=18.0.0 <20.0.0"
+    "node": ">=18.17.X <=20.19.x"
   },
   "strapi": {
     "uuid": "3ca7ac1d-0736-44d9-91bb-62b8a8b1ea3c"
