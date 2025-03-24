@@ -29,7 +29,7 @@
     "styled-components": "^5.2.1"
   },
   "engines": {
-    "node": ">=18.0.0 <20.0.0"
+    "node": ">=18.0.0 <23.0.0"
   },
   "strapi": {
     "uuid": "3ca7ac1d-0736-44d9-91bb-62b8a8b1ea3c"
