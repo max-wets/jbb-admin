@@ -20,9 +20,9 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "sendgrid",
+      provider: 'strapi-provider-email-resend',
       providerOptions: {
-        apiKey: env("SENDGRID_API_KEY"),
+        apiKey: env('RESEND_API_KEY'), // Required
       },
       settings: {
         defaultFrom: "contact@juliebaronniebeauty.com",
